@@ -1,4 +1,3 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:provider/provider.dart';
@@ -21,6 +20,18 @@ void main() {
           find.byType(ListView), const Offset(0, -700), 3000);
       await widgetTester.pumpAndSettle();
       expect(find.text('Item 0'), findsNothing);
+    });
+    testWidgets('test icon button', (widgetTester) async {
+      await widgetTester.pumpWidget(createHomeWidget());
+      expect(find.byIcon(Icons.favorite_border).first, findsOneWidget);
+      expect(find.byIcon(Icons.favorite), findsNothing);
+      await widgetTester.tap(find.byIcon(Icons.favorite_border).first);
+      await widgetTester.pumpWidget(createHomeWidget());
+      expect(find.byIcon(Icons.favorite), findsOneWidget);
+      await widgetTester.tap(find.byIcon(Icons.favorite).first);
+      await widgetTester.pumpWidget(createHomeWidget());
+      expect(find.byIcon(Icons.favorite_border).first, findsOneWidget);
+      expect(find.byIcon(Icons.favorite), findsNothing);
     });
   });
 }
