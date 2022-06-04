@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:testing_flutter_app/screens/favourites.dart';
+import 'package:testing_flutter_app/screens/favorites.dart';
 import 'package:testing_flutter_app/screens/home.dart';
 
-import 'models/favourites.dart';
+import 'models/favorites.dart';
 
 void main() {
   runApp(TestingApp());
