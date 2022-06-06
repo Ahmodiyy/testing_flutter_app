@@ -23,5 +23,6 @@ void main() {
         await widgetTester.pumpAndSettle();
       }, reportKey: 'scrolling summary');
     });
+    testWidgets('favorite operation test', (widgetTester) async {});
   });
 }
