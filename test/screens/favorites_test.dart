@@ -33,11 +33,11 @@ void main() {
     testWidgets('testing remove button', (widgetTester) async {
       await widgetTester.pumpWidget(createFavoritesScreen());
       addItems();
-      await widgetTester.pumpWidget(createFavoritesScreen());
+      await widgetTester.pump();
       int totalInitialCloseIcon =
           widgetTester.widgetList(find.byIcon(Icons.close)).length;
       await widgetTester.tap(find.byIcon(Icons.close).first);
-      await widgetTester.pumpWidget(createFavoritesScreen());
+      await widgetTester.pump();
       expect(widgetTester.widgetList(find.byIcon(Icons.close)).length,
           lessThan(totalInitialCloseIcon));
     });
